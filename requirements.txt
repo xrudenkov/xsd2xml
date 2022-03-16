@@ -1,0 +1,3 @@
+rstr
+xmlschema
+requests
