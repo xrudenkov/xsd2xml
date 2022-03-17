@@ -59,3 +59,8 @@ class Xsd2XmlGenerator:
     def write(self, xml_path) -> None:
         tree = ElementTree.ElementTree(self.root)
         tree.write(xml_path, encoding="utf-8", xml_declaration=True)
+        print("Generate " + xml_path + ".xml \nDone!!!")
+
+    def validate(self, xml_path):
+        self.schema.validate(xml_path)
+        print(xml_path + " validates = " + str(self.schema.is_valid(xml_path)))
